@@ -98,7 +98,7 @@ def main():
             summary += f"- 품절: {', '.join(sold_out)}"
 
         message = "\n".join(message_lines) + summary
-        # send_telegram_message(message)
+        send_telegram_message(message)
 
     except Exception as e:
         print("에러 발생:", e)
