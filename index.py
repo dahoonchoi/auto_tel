@@ -29,11 +29,14 @@ def send_telegram_message(text):
 
 def main():
     chrome_opts = Options()
+    chrome_opts.binary_location = "/usr/bin/google-chrome"   # ✅ Render 환경 전용 경로
     chrome_opts.add_argument("--headless=new")
     chrome_opts.add_argument("--no-sandbox")
     chrome_opts.add_argument("--disable-dev-shm-usage")
     chrome_opts.add_argument("--disable-gpu")
     chrome_opts.add_argument("--lang=ko-KR")
+    chrome_opts.add_argument("--window-size=1920x1080")
+    chrome_opts.add_argument("--disable-software-rasterizer")
     chrome_opts.add_argument(
         "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
